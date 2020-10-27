@@ -17,7 +17,7 @@ void initial_conditions(Particle & body)
 
 }
 
-void compute_force(Particle & body)
+double compute_force(Particle & body)
 {
   // reset force
   body.Fx = body.Fy = body.Fz = 0.0;
@@ -71,6 +71,7 @@ void compute_force(Particle & body)
     body.Fz += K*delta;
     body.Fz -= 0*body.Vx;
   }
+  return body.Fy*body.Ry + body.mass*(body.Vx + body.Vy + body.Vz)/2;
 }
 
 void start_integration(Particle & body, const double & dt)

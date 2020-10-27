@@ -1,6 +1,8 @@
 #ifndef __MD_SIMUL_H_
 #define __MD_SIMUL_H_
-
+//Anderson Ibarra
+//Felipe Bermudez
+//Geraldine Gracia
 #include <iostream>
 #include "particle.h"
 
@@ -11,7 +13,7 @@ const double K = 253.57;
 
 // function declarations
 void initial_conditions(Particle & body);
-void compute_force(Particle & body);
+double compute_force(Particle & body);
 void time_integration(Particle & body, const double & dt);
 void start_integration(Particle & body, const double & dt);
 void print(Particle & body, double time);

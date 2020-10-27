@@ -16,8 +16,10 @@ int main(void)
   for(int istep = 0; istep < NSTEPS; ++istep) {
     time_integration(ball, DT);
     compute_force(ball);
-    print(ball, istep*DT);
-    if (istep % 10 == 0) {
+    //print(ball, istep*DT);
+    if (istep % 100 == 0) {
+      std::cout << istep*DT << " "
+                << compute_force(ball) << std::endl;
       std::string fname = "post/datos-" + std::to_string(istep) + ".csv";
       std::ofstream fout(fname);
       fout << ball.Rx << ", "
